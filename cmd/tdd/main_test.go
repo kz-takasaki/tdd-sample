@@ -18,6 +18,7 @@ func TestEquality(t *testing.T) {
 	assert.False(t, main.NewDollar(5).Equals(main.NewDollar(6)))
 	assert.True(t, main.NewFranc(5).Equals(main.NewFranc(5)))
 	assert.False(t, main.NewFranc(5).Equals(main.NewFranc(6)))
+	// assert.False(t, main.NewDollar(5).Equals(main.NewFranc(5))) // Goでは現時点でこのテストを通すことができないので保留
 }
 
 func TestFrancMultiplication(t *testing.T) {
