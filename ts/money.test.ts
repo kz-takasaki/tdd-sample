@@ -1,10 +1,8 @@
 import { Dollar } from "./money";
 test("should return times", () => {
   const five = new Dollar(5);
-  let product = five.times(2);
-  expect(product.amount).toEqual(10);
-  product = five.times(3);
-  expect(product.amount).toEqual(15);
+  expect(five.times(2)).toEqual(new Dollar(10));
+  expect(five.times(3)).toEqual(new Dollar(15));
 });
 
 test("equality", () => {
