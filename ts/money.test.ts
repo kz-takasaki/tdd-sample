@@ -1,4 +1,4 @@
-import { Dollar } from "./money";
+import Dollar from "./dollar";
 test("should return times", () => {
   const five = new Dollar(5);
   expect(five.times(2)).toEqual(new Dollar(10));

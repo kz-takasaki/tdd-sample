@@ -1,4 +1,4 @@
-export class Dollar {
+export default class Dollar {
   private amount: number;
   constructor(amount: number) {
     this.amount = amount;
