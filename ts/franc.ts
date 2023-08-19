@@ -7,4 +7,9 @@ export default class Franc extends Money {
   times(multiplier: number): Franc {
     return new Franc(this.amount * multiplier);
   }
+  equals(object: Object): boolean {
+    return (
+      super.equals(object) && object.constructor.name === this.constructor.name
+    );
+  }
 }

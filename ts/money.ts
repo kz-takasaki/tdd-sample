@@ -4,7 +4,7 @@ export default class Money {
     this.amount = amount;
   }
   equals(object: Object): boolean {
-    const money = object as Money;
+    const money: Money = object as Money;
     return this.amount === money.amount;
   }
 }
