@@ -20,3 +20,8 @@ test("should return times franc", () => {
   expect(five.times(2)).toEqual(Money.franc(10));
   expect(five.times(3)).toEqual(Money.franc(15));
 });
+
+test("currency", () => {
+  expect(Money.dollar(1).getCurrency()).toEqual("USD");
+  expect(Money.franc(1).getCurrency()).toEqual("CHF");
+});
