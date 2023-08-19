@@ -1,4 +1,5 @@
 import Money from "./money";
+import { Franc } from "./money";
 
 test("should return times", () => {
   const five: Money = Money.dollar(5);
@@ -24,4 +25,8 @@ test("should return times franc", () => {
 test("currency", () => {
   expect(Money.dollar(1).getCurrency()).toEqual("USD");
   expect(Money.franc(1).getCurrency()).toEqual("CHF");
+});
+
+test("different class equality", () => {
+  expect(new Money(10, "CHF").equals(new Franc(10, "CHF"))).toEqual(true);
 });
