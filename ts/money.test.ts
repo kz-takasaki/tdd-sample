@@ -1,3 +1,4 @@
+import Bank from "./bank";
 import Money from "./money";
 
 test("should return times", () => {
@@ -16,4 +17,12 @@ test("equality", () => {
 test("currency", () => {
   expect(Money.dollar(1).getCurrency()).toEqual("USD");
   expect(Money.franc(1).getCurrency()).toEqual("CHF");
+});
+
+test("simple addition", () => {
+  const five: Money = Money.dollar(5);
+  const sum: Expression = five.plus(five);
+  const bank: Bank = new Bank();
+  const reduced: Money = bank.reduce(sum, "USD");
+  expect(reduced).toEqual(Money.dollar(10));
 });
