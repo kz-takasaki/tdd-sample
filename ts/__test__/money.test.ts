@@ -1,5 +1,5 @@
-import Bank from "./bank";
-import Money from "./money";
+import { Money } from "../src";
+import { Bank } from "../src";
 
 test("should return times", () => {
   const five: Money = Money.dollar(5);
