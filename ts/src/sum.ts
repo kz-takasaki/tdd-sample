@@ -1,4 +1,4 @@
-import { Money, Expression } from ".";
+import { Money, Expression, Bank } from ".";
 
 export default class Sum implements Expression {
   augend: Money;
@@ -7,7 +7,7 @@ export default class Sum implements Expression {
     this.augend = augend;
     this.addend = addend;
   }
-  reduce(to: string): Money {
+  reduce(bank: Bank, to: string): Money {
     const amount = this.augend.amount + this.addend.amount;
     return new Money(amount, to);
   }
