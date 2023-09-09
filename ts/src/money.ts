@@ -10,7 +10,7 @@ export default class Money implements Expression {
   times(multiplier: number): Expression {
     return new Money(this.amount * multiplier, this.currency);
   }
-  public plus(addend: Expression): Expression {
+  plus(addend: Expression): Expression {
     return new Sum(this, addend);
   }
   reduce(bank: Bank, to: string): Money {

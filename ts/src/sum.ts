@@ -7,8 +7,11 @@ export default class Sum implements Expression {
     this.augend = augend;
     this.addend = addend;
   }
-  public plus(addend: Expression): Expression {
-    return addend;
+  times(multiplier: number): Expression {
+    return new Sum(this.augend.times(multiplier), this.addend.times(multiplier));
+  }
+  plus(addend: Expression): Expression {
+    return new Sum(this, addend);
   }
   reduce(bank: Bank, to: string): Money {
     const amount = this.augend.reduce(bank, to).amount + this.addend.reduce(bank, to).amount;
