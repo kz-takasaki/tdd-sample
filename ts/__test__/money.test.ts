@@ -57,3 +57,12 @@ test("should reduce money different currency", () => {
 test("should identity rate", () => {
   expect(new Bank().getRate("USD", "USD")).toEqual(1);
 });
+
+test("test mixed addition", () => {
+  const fiveBucks: Expression = Money.dollar(5);
+  const tenFrancs: Expression = Money.franc(10);
+  const bank = new Bank();
+  bank.addRate("CHF", "USD", 2);
+  const result: Money = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+  expect(result).toEqual(Money.dollar(10));
+});
